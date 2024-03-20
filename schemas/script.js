@@ -1,11 +1,12 @@
 NEWSCHEMA('Users', function(schema) {
+    var compteur = 1;
 
     // Action for list of all users
     schema.action('list', {
         name: 'List of all users',
         action: function($) {
-            // $.callback('List of all users');
-            $.redirect('/');
+
+            $.redirect('/teams/');
         }
     });
 
@@ -14,11 +15,20 @@ NEWSCHEMA('Users', function(schema) {
         name: 'Add user',
         input:'firstname:String,lastname:String',
         action: function($, model) {   
-            // Save users in db
-            model.id = UID();
+
+            if(compteur > 20) {
+                $.redirect('/limits/');
+                return;
+            } 
+
+            // Insert users in db
+            model.id = UID();  
             model.dtcreated = NOW;
-            NOSQL('users/nosql').insert(model, true).where('id', model.id).callback($.callback);
-        }
+            NOSQL('users').insert(model);
+            // redirection
+            $.redirect('/users/');
+            compteur++;
+        }  
     });  
     
 });   

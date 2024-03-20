@@ -19,6 +19,11 @@
 		},
 		{
 			"method": "GET",
+			"url": "/limits/",
+			"owner": "controller_default"
+		},
+		{
+			"method": "GET",
 			"url": "/users/",
 			"owner": "controller_default",
 			"schema": "Users"

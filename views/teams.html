@@ -12,52 +12,19 @@
         </thead>
         <tbody>
             <tr>
+                @{foreach users in model.users}
                 <td>
+                    @{foreach data in users}
                     <ul>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
+                        <li> 
+                            <span>@{data.firstname} @{data.lastname}</span>
+                        </li>
                     </ul>
+                    @{end}
                 </td>
-                <td>
-                    <ul>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
-                        <li>Ouedraogo Bibata</li>
-                        <li>Kientega Nourdine</li>
-                    </ul>
-                </td>
+                @{end}
             </tr>
         </tbody>
     </table>
+    <a href="/">S'incrire</a>
 </div>
