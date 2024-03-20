@@ -1,0 +1,36 @@
+{
+	"routes": [
+		{
+			"method": "POST",
+			"url": "/signup/",
+			"owner": "controller_default",
+			"schema": "Users",
+			"input": "firstname:String,lastname:String"
+		},
+		{
+			"method": "GET",
+			"url": "/",
+			"owner": "controller_default"
+		},
+		{
+			"method": "GET",
+			"url": "/teams/",
+			"owner": "controller_default"
+		},
+		{
+			"method": "GET",
+			"url": "/users/",
+			"owner": "controller_default",
+			"schema": "Users"
+		}
+	],
+	"actions": [
+		{
+			"name": "Users --> list"
+		},
+		{
+			"name": "Users --> signup",
+			"input": "firstname:String,lastname:String"
+		}
+	]
+}
